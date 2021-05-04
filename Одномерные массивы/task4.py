@@ -1,34 +1,16 @@
-# Задача:
-#     Сформировать случайный массив целых чисел.
-#     Пока в массиве не попалось трёхзначное число – перемножаем элементы на максимум этого массива.
-#     Трёхзначное число не трогаем, а все числа после него перемножаем на минимум из этого массива.
-#     Всё вывести в терминал
-
-
-# Для генерации случайных элементов подключаем модуль для работы рандома
 import random
-
-# Объявляем три массива, первичный и два других требуемых по задаче
-array = []
-arr_len = []
-new_arr = []
-arr_size = int(input('Укажите размер массива: '))
-
-
-
-
-
-
-# Заполнение первичного массива
-for i in range(arr_size):
-    array.append(random.randint(1, 3))
-    arr_len.append(len(str(array[i])))
-print(array)
-print(arr_len)
-
-k = 0
-while max(arr_len) < 5:
-    if k != len(array):
-        new_arr.append(array[k] * array[k+1])
-        arr_len.append(len(str(new_arr[k])))
-        k += 1
+inp = int(input('Укажите размер массива: '))
+a = []
+b = []
+c = []
+for i in range(inp):
+    a.append(random.randint(1, 5))
+    b.append(random.randint(1, 5))
+print('Исходный массив #1\n' + str(a))
+# print(a)
+print('Исходный массив #2\n' + str(b))
+# print(b)
+for i in range(inp):
+    c.append(a[i] * b[(inp-1)-i])
+print('Преобразованный массив\n' + str(c))
+# print(c)
