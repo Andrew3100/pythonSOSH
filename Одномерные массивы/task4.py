@@ -1,4 +1,6 @@
+
 import random
+
 inp = int(input('Укажите размер массива: '))
 a = []
 b = []
@@ -13,4 +15,4 @@ print('Исходный массив #2\n' + str(b))
 for i in range(inp):
     c.append(a[i] * b[(inp-1)-i])
 print('Преобразованный массив\n' + str(c))
-# print(c)
+
