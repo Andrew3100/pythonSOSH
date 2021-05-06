@@ -15,15 +15,15 @@ for i in range(len_array):
 
 print(array)
 
-
 for i in range(len_array):
     if array[i] % 2 == 0:
+        # в переменную r пишем случайное значение от перебираемого элемента до 100
         r = random.randint(array[i], 100)
         print('Умножаю число ' + str(array[i]) + ' на число ' + str(r) + ' из диапазона от ' + str((array[i])) + ' до 100')
         new_array.append(array[i] * r)
     else:
+        # в переменную rr пишем случайное значение от минимального до максимального элемента
         rr = random.randint(min(array), max(array))
         print('Умножаю число ' + str(array[i]) + ' на число ' + str(rr) + ' из диапазона от ' + str(min(array)) + ' до ' + str(max(array)))
         new_array.append(array[i] * rr)
-
 print(new_array)
