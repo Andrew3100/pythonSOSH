@@ -1,6 +1,12 @@
 import telebot
 from telebot import types
 import smtplib
+import os
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+from platform import python_version
 bot = telebot.TeleBot('1766404211:AAH4mM6J5qOSZvVCSY6TInztk9PFZjkjwgU')
 
 @bot.message_handler(commands=['start', 'help'])
@@ -10,7 +16,6 @@ def send_welcome(message):
     @bot.message_handler(content_types=['text'])
     def get_text_messages(message):
         if message.text.lower():
-            item_yes = types.InlineKeyboardButton(text='Принять', callback_data='yes')
             bot.send_message(message.from_user.id, 'Привет!')
             t = message.text
         else:
